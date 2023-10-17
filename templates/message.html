@@ -1,0 +1,64 @@
+{% extends 'dashboard.html' %}
+<html>
+<head>
+{% block head %}
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+  .background {
+    background: #ac5859;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+</style>
+<title> Post Details </title>
+{% endblock head %}
+</head>
+
+<body>
+
+  {% block body %}
+<div style="margin-left:20%; margin-right:5%">
+<h2 style= "text-align: center;">Post details</h2>
+<div class="card">
+
+<table>
+  <tr >
+    <th>Name</th>
+    <th>Date</th>
+    <th colspan = "2">Details</th>
+  </tr>
+  {% for i in info %}  
+  <tr>
+    <td>{{i.mfname}} {{i.mlname}}</td>
+    <td>{{i.mdate}}</td>
+    <form action="msgshow" method="POST">
+      {% csrf_token %}
+    <td><button type="submit" name="mfname" value ="{{i.mfname}}">View</button></td>
+    </form>
+
+
+  </tr>
+  {% endfor %}
+</table>
+
+</div>
+</div>
+<hr style="margin-bottom:25%">
+{% endblock body %}
+</body>
+
+</html>

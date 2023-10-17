@@ -1,0 +1,110 @@
+
+{% extends 'dashboard.html' %}
+<html>
+    
+    <head>
+        {% block head %}
+        <title>New tenant registration</title>
+        <style>
+            .container {
+                border-radius: 5px;
+                width: 80%;
+                font-color: black;
+                margin-left:20%;
+              }
+              .column {
+                float: left;
+                width: 50%;
+                padding:0px;
+              }
+             
+              
+              /* Clear floats after the columns */
+              .row:after {
+                content: "";
+                display: table;
+                clear: both;
+                
+              }
+              /*Box css*/
+              * {
+                    box-sizing: border-box;
+                }
+        </style>
+        {% endblock head %}
+    </head>
+
+    <body>
+        {% block body %}
+        
+        <div class="container">   
+            <div class="row" style="margin-top:20px; margin-left:4.5%; margin-right:4.5%" >
+        <form action="/addtenant" method="POST">
+            {% csrf_token %}
+        <div class="column">
+        <h2  >Personal Details</h2>            
+        <div>
+            <label for="fname">First name:*</label><br>
+            <input type="text" id="fname" name="fname" required><br><br>
+            </div>
+
+            <div>
+            <label for="lname">Last name:*</label><br>
+            <input type="text" id="lname" name="lname" required><br><br>
+            </div>
+            
+            <div>
+                <label for="contact">Contact Number:*</label><br>
+                <input type="text" id="contact" name="contact" required><br><br>
+            </div>
+
+            <div>
+                <label for="email">Email ID:*</label><br>
+                <input type="text" id="email" name="email" required><br><br>
+            </div>
+
+            <div>
+            <label for="laddress">Previous Address:*</label><br>
+            <textarea rows="1" cols="50" id="laddress" name="laddress" required></textarea><br><br>
+            </div>
+
+        </div>
+            
+        <div class="column">
+            <h2>Agreement Details</h2>
+            <div>
+                <label for="pdetails">Rental Propert Location:*</label><br>
+                <textarea rows="1" cols="50" id="pdetails" name="pdetails" required></textarea><br><br>
+            </div>
+
+            <div>
+                <label for="ramt">Rent Amount:*</label><br>
+                <input type="text" id="ramt" name="ramt" required><br><br>
+            </div>
+                
+            <div>
+                <label for="deposit">Deposit Amount:*</label><br>
+                <input type="text" id="deposit" name="damt" required><br><br>
+            </div>
+
+            <div>
+                <label for="sdate">Start Date:*</label><br>
+                <input type="date" id="sdate" name="sdate" required><br><br>
+            </div>
+
+            <div>
+                <label for="ldate">Last Date:*</label><br>
+                <input type="date" id="ldate" name="ldate" required><br><br>
+            </div></div>
+            <div >
+                <button type="submit" class="btn"> Submit </button>
+            </div>
+        
+        </form>
+    </div>    
+</div>
+
+
+    {% endblock body %}
+</body>
+</html>

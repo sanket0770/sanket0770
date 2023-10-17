@@ -1,0 +1,164 @@
+{% extends 'temp.html' %}
+<html>
+    <head>
+        {%block head%}
+        <title> Home </title>
+        <style>
+            .image{
+                width:91%; 
+                height:80%; 
+                margin-left:4.5%
+                }
+
+                .column {
+                    float: left;
+                    width: 50%;
+                    padding: 10px;
+                  }
+                 
+                  
+                  /* Clear floats after the columns */
+                  .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                    
+                  }
+                
+                  .center {
+                    display: block;
+                    margin-top: auto;
+                    margin-right: auto;
+                    width: 100%;
+                  }
+                
+                  
+                  .container {
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                 
+                  }
+                  /*Box css*/
+                * {
+                      box-sizing: border-box;
+                  }
+
+                
+        </style>
+        {%endblock head%}
+    </head>
+    <body>
+        {% block body %}
+        <div>
+            <div>
+        
+                <div class="mySlides fade">
+                    <img src="static/1.jpg" class="image">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="static/2.jpg" class="image">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="static/3.jpg" class="image">
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin-top:20px; margin-left:4.5%; margin-right:4.5%">
+
+<div >
+  <div class="row" style="margin-top:20px; margin-left:4.5%; margin-right:4.5%" >
+    <div class="column" >
+      <div style="margin-top:20px; margin-left:4.5%; margin-right:4.5%">
+
+        <h3 class="text-uppercase font-weight-bold">Features</h3>
+        
+        <p>At Codename Central, large homes with grand balconies opening to breathtaking 
+            views of lush greens make sure you live a cut above the rest. The homes here are 
+            well-planned with international standard of amenities for the lifestyle that you deserve.</p>
+
+        <p>Residences with grand balconies & views of lush greens or tree lined avenue</p>
+            
+        <p>Large homes with minimal passage for optimal space utilization</p>
+            
+        <p>Tall windows for maximum light and ventilation</p>
+            
+        <p>Separate cupboard area in each bedroom for best space utilization</p>
+      </div>
+  </div>
+  
+    <div class="column " >
+      <div >
+        <img src= "static/bed.jpg" width="100%" style="padding-right:30px; padding-top:17px ;"> 
+    </div>
+  </div>  
+ </div>
+</div>
+
+<hr style="margin-top:20px; margin-left:4.5%; margin-right:4.5%">
+
+<div >
+  <div class="row" style="background:#F1E6BD; margin-top:20px; margin-left:4.5%; margin-right:4.5%">
+    <div class="column" >
+      <div >
+
+        <img src= "static/living.jpg" width="100%" style="padding-left:30px; padding-top:59px ">
+      </div>
+  </div>
+  
+    <div class="column " >
+      <div class="slideshow-container center" >
+      <h3 class="text-uppercase font-weight-bold">Amenities</h3>
+
+        <p>Cavy Home Codename Central offers modern lifestyle amenities and ample open spaces right at your doorstep</p>
+
+            <p>Tree courts with big trees across the courtyard</p>
+            
+            Community lawn and pocket gardens</p>
+            
+            Outdoor working zones with WiFi</p>
+            <p>Senior Citizen corner & temple</p>          
+            <p>Kids Play area</p>
+            <p>Walking trail</p>
+            
+            <p>Clubhouse with gym, café, mini theatre, sports courts, party halls, swimming pool & much more </p>
+    </div>
+  </div>  
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < slides.length; i++) {
+            slides[i].className = slides[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          slides[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
+        {% endblock body %}
+    </body>
+</html>

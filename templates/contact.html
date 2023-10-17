@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% extends 'temp.html' %}
+<html>
+<head>
+{% block head %}
+<style>
+
+input[type=text], input[type=file], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background-color: white;
+}
+
+label, h2{
+    color:black;
+}
+
+input[type=submit] {
+  background-color: #ac5859;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #d89d90 ;
+}
+
+.container {
+  border-radius: 5px;
+  width: 100%;
+  font-color: black;
+}
+ 
+form
+{
+    padding:40px;
+}
+.image{
+    width:91%; 
+    height:80%; 
+    margin-left:4.5%
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+      }
+     
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        
+      }
+
+      /*Box css*/
+    * {
+          box-sizing: border-box;
+      }
+      .image{
+        width:91%; 
+        height:60%; 
+      }
+</style>
+<title> Contact </title>
+{% endblock head %}
+</head>
+<body>
+{% block body %}
+
+
+<div class="container">
+<div class="row" style="margin-top:20px; margin-left:4.5%; margin-right:4.5%" >
+    <div class="column" style="padding-top:30px; padding-bottom:17px ;">
+        <img src= "static/contact.jpg" class="image" >
+    </div>
+
+
+    <div class="column " >
+        <div style="padding-left:15px">
+            <h2 >Contact Form</h2 >
+                <hr>
+              <form action="/contact" method="POST">
+                {% csrf_token %}
+                <label  for="fname">First Name</label>
+                <input type="text" id="mfname" name="mfname" placeholder="Your first name..">
+            
+                <label  for="lname">Last Name</label>
+                <input type="text" id="mlname" name="mlname" placeholder="Your last name..">
+            
+                <label  for="contact">Contact</label>
+                <input type="text" id="mcontact" name="mcontact" placeholder="Your Contact Number..">
+            
+                <label  for="email">Email ID</label>
+                <input type="text" id="memail" name="memail" placeholder="Your Email Id..">
+            
+                <label  for="subject">Message</label>
+                <textarea id="mmessage" name="mmessage" placeholder="Maximum 500 Words" style="height:150px"></textarea>
+                
+                <label  for="file">Email ID</label>
+                <input type="file" id="file1" name="file1">
+            
+                
+            
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+    </div>
+</div>
+</div>
+    
+
+{% endblock body %}
+</body>
+</html>

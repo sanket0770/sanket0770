@@ -1,0 +1,70 @@
+{% extends 'dashboard.html' %}
+<html>
+<head>
+{% block head %}
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+  td, th {
+    
+    text-align: center;
+    padding: 8px;
+}
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+  .background {
+    background: #ac5859;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+</style>
+<title> Tenant Details </title>
+{% endblock head %}
+</head>
+
+<body>
+
+  {% block body %}
+<div style="margin-left:20%; margin-right:5%">
+<h2 style= "text-align: center;">Tenant details</h2>
+<div class="card">
+
+<table>
+  <tr >
+    <th>Tenant Name</th>
+    <th>Start Date</th>
+    <th>Last Date</th>
+    <th colspan = "2">Details</th>
+  </tr>
+  {% for i in info %}  
+  <tr>
+    <td>{{i.fname}} {{i.lname}}</td>
+    <td>{{i.sdate}}</td>
+    <td>{{i.ldate}}</td>
+    <form action="/show" method="POST">
+      {% csrf_token %}
+    <td><button class="btn" type="submit" name="fname" value ="{{i.fname}}">View</button></td>
+    </form>
+
+    <form action="/pdetails" method="POST">
+      {% csrf_token %}
+    <td><button class="btn" type="submit" name="fname" value ="{{i.fname}}">Payment</button></td>
+    </form>
+
+  </tr>
+  {% endfor %}
+</table>
+
+</div>
+</div>
+<hr style="margin-bottom:25%">
+{% endblock body %}
+</body>
+
+</html>

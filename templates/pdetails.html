@@ -1,0 +1,72 @@
+
+{% extends 'dashboard.html' %}
+<html>
+    <head>
+        {% block head %}
+        <title>Payment Update Center</title>
+        <style>
+            .pay{
+                margin-left:40%;
+                margin-right:20%;
+            }
+        </style>
+        {%endblock head%}
+    </head>
+
+    <body>
+        {%block body%}
+        <div class="pay">
+        <form action="/s_pdetails" method="POST">
+            {% csrf_token %}
+            <h2>Payment Details</h2>  
+            {% for i in k   %}
+            
+            <div>
+            <label for="fname">First name:*</label>
+            <input type="text" id="fname" name="sname" value="{{i.fname}}"><br><br>
+            </div>
+
+            <div>
+            <label for="lname">Last name:*</label>
+            <input type="text" id="lname" name="lname" value="{{i.lname}}" ><br><br>
+            </div>
+            
+            <div>
+                <label for="ramt">Rent Amount:*</label>
+                <input type="text" id="ramt" name="ramt" value="{{i.ramt}}" ><br><br>
+            </div>
+            {% endfor %}    
+
+            <div>
+            <label for="rmonth"> Rent Month:*</label>
+            <select id="rmonth" name="rmonth">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="Augest">Augest</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+            </div><br>
+            
+            <div>
+                <label for="rdate">Rent Date:*</label>
+                <input type="date" id="ldate" name="rdate" required><br><br>
+            </div>
+
+            <div>
+                <button class="btn" type="submit" > Submit </button>
+            </div>
+           
+            </div>
+          </form>
+        </div>
+        {% endblock body %}       
+    </body>
+</html>

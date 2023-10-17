@@ -1,0 +1,128 @@
+{% extends 'temp.html' %}
+<html>
+    <head>
+        {% block head %}
+        <title>About</title>
+        <style>
+           
+            .column {
+              float: left;
+              width: 32%;
+              margin-bottom: 16px;
+              padding: 0 8px;
+            }
+            
+            .card {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              margin: 8px;
+              background-color: #F1E6BD;
+            }
+            
+            .about-section {
+              padding: 50px;
+              text-align: center;
+              background-color: #474e5d;
+              color: white;
+            }
+            
+            .container {
+              padding: 0 16px;
+            }
+            
+            .container::after, .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            
+            .title {
+              color: grey;
+            }
+            
+            .button {
+              border: none;
+              outline: 0;
+              display: inline-block;
+              padding: 8px;
+              color: white;
+              background-color: #000;
+              text-align: center;
+              cursor: pointer;
+              width: 100%;
+            }
+            
+            .button:hover {
+              background-color: #555;
+            }
+            
+            @media screen and (max-width: 650px) {
+              .column {
+                width: 100%;
+                display: block;
+              }
+            }
+            </style>
+        {% endblock head %}
+    </head>
+    <body>
+    {% block body  %}
+    <div class="about-section">
+        <img src="static/about-logo.png">
+        <p>At Cavy Home, our passion is to create landmarks that meet global standards, epitomise the 
+            values of our family, and are built on a legacy of trust spanning four decades. We are 
+            guided by our vision of ‘Building a Better Life’. Cavy Home enables and transforms you to be 
+            a better version of yourself by maximising your potential and leading a flourished life.</p>
+
+        <p>All our developments deliver the highest level of design and craftsmanship, uncompromising 
+            quality, unparalleled service – putting Cavy Home developments in the league of the world’s finest.
+             Our homes are designed to enable more productivity, amenities designed and curated to equip with 
+             opportunity! Be it greens/open spaces designed to live a healthier and fuller life or gentry to 
+             match like-mindedness, banquets and club houses to network or striking the right chord with the 
+             right people, Cavy Home ensures that your next biggest milestone, is within reach.</p>
+      </div>
+      
+      <h2 style="text-align:center">Our Project</h2>
+      <div class="row" style="margin-left: 2px">
+        <div class="column">
+          <div class="card">
+            <img src="static/about1.jpg" alt="Jane" style="width:100%; height:42%">
+            <div class="container">
+              <h2>Tallaght</h2>
+              <p class="title">Address</p>
+              <p>The Meath Foundation, Tallaght,Dublin 24, Dublin.</p>
+              <p>info@cavyhome.ie</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="static/about2.jpg" alt="Mike" style="width:100%; height:42%">
+            <div class="container">
+              <h2>Ongar</h2>
+              <p class="title">Address</p>
+              <p>Hansfield Wood, Clonsilla,Ongar, Dublin 15, Dublin.</p>
+              <p>info@cavyhome.ie</p>
+     
+            </div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <img src="static/about3.jpg" alt="John" style="width:100%; height:42%">
+            <div class="container">
+              <h2>Heuston</h2>
+              <p class="title">Address</p>
+              <p>James's Gate, Saint Catherine's, Dublin 8,Dublin</p>
+              <p>info@cavyhome.ie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    {% endblock body %}
+    </body>
+</html>

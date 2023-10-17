@@ -1,0 +1,90 @@
+{% extends 'dashboard.html' %}
+<html>
+    <head>
+        {% block head %}
+        <style>
+            .container {
+                border-radius: 5px;
+                width: 80%;
+                font-color: black;
+                margin-left:20%;
+              }
+              .column {
+                float: left;
+                width: 50%;
+                padding:0px;
+              }
+             
+              
+              /* Clear floats after the columns */
+              .row:after {
+                content: "";
+                display: table;
+                clear: both;
+                
+              }
+              /*Box css*/
+              * {
+                    box-sizing: border-box;
+                }
+        </style>
+        <title>Tenant Details</title>
+        {%endblock head%}
+    </head>
+
+    <body>
+    {%block body%}
+      
+    <div class="container">   
+        <div class="row" style="margin-top:20px; margin-left:4.5%; margin-right:4.5%" >
+            <h2 style="margin-left:32%">Post Details</h2>
+            <div  class="column">
+            {% for i in k %}
+            <div>
+            <label for="fname">First name:</label>{{i.mfname}}
+            </div>
+            <br>
+
+            <div>
+            <label for="lname">Last name:</label> {{i.mlname}}
+            </div>
+            <br>
+
+            <div>
+                <label for="contact">Contact Number:</label> {{i.mcontact}}
+            </div>
+            <br>
+
+            <div>
+                <label for="email">Email ID:</label> {{i.memail}}
+            </div>
+            <br>
+
+           
+        </div>
+            
+        <div class="column">
+            
+            <br>
+
+            <div>
+                <label for="pdetails">Post Date:</label> {{i.mdate}}
+            </div>
+            <br>
+
+            <div>
+                <label for="ramt">Message:</label> {{i.mmessage}}
+            </div>
+            <br>
+
+
+            <button class="btn"> <a style="color:black; text-decoration:none;" href="message"> Back </a></button>
+            {% endfor %} 
+      
+        </div>
+    </div>    
+</div>
+<div>
+        {% endblock body %}       
+    </body>
+</html>
